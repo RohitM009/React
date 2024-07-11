@@ -10,13 +10,17 @@ function App() {
 
   const addValue=()=>{
     // console.log("Value Added",Math.random())
-    if(count < 20){
-      setCount(count+1);
-    }
-    else{
-      setCount(count);
-      setStatment("Limit Reached",{count})
-    }
+    setCount(prevCounter => prevCounter + 1)
+    setCount(prevCounter => prevCounter + 1 )
+    setCount(prevCounter => prevCounter + 1)
+    setCount(prevCounter => prevCounter + 1)
+    // if(count < 20){
+    //   setCount(count+1);
+    // }
+    // else{
+    //   setCount(count);
+    //   setStatment("Limit Reached",{count})
+    // }
     
   }
   const removeValue=()=>{
