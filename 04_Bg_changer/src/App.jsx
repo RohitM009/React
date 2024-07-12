@@ -15,7 +15,7 @@ function App() {
           shadow-lg bg-white px-3 py-2 rounded-3xl"
           >
             <button
-            onClick={()=>setColor("red")}
+              onClick={() => setColor("red")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "red" }}
@@ -24,7 +24,7 @@ function App() {
             </button>
 
             <button
-            onClick={()=>setColor("blue")}
+              onClick={() => setColor("blue")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "blue" }}
@@ -33,7 +33,7 @@ function App() {
             </button>
 
             <button
-            onClick={()=>setColor("green")}
+              onClick={() => setColor("green")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "green" }}
@@ -42,7 +42,7 @@ function App() {
             </button>
 
             <button
-            onClick={()=>setColor("orange")}
+              onClick={() => setColor("orange")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "orange" }}
@@ -51,7 +51,7 @@ function App() {
             </button>
 
             <button
-            onClick={()=>setColor("yellow")}
+              onClick={() => setColor("yellow")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "yellow" }}
@@ -60,7 +60,7 @@ function App() {
             </button>
 
             <button
-            onClick={()=>setColor("purple")}
+              onClick={() => setColor("purple")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "purple" }}
@@ -68,7 +68,7 @@ function App() {
               Purple
             </button>
             <button
-            onClick={()=>setColor("black")}
+              onClick={() => setColor("black")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "black" }}
@@ -76,7 +76,7 @@ function App() {
               Black
             </button>
             <button
-            onClick={()=>setColor("grey")}
+              onClick={() => setColor("grey")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "grey" }}
@@ -84,7 +84,7 @@ function App() {
               Grey
             </button>
             <button
-            onClick={()=>setColor("darkblue")}
+              onClick={() => setColor("darkblue")}
               className="outline-none px-4 py-1 
             rounded-full text-white shadow-lg"
               style={{ backgroundColor: "darkblue" }}
