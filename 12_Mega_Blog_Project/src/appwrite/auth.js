@@ -70,5 +70,5 @@ export class AuthService{
 
 //01//here we have created object from class Authservice and exoprted it so we can access its methods 
 
-const authservice =new AuthService()
-export default authservice
+const authService =new AuthService()
+export default authService
