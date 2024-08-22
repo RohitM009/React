@@ -9,7 +9,7 @@ export class AuthService{
 //jab bhi uska object banega tab account create hoga means constructor call hoga
     constructor(){
         this.client
-            .setEndpoint(conf.appwrite)
+            .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId);
         this.account=new Account(this.client)
     }
@@ -52,7 +52,7 @@ export class AuthService{
         try {
             return await this.account.get();
         } catch (error) {
-            console.log("Appwrite service::: getcurrentuser:: error ", error);
+            console.log("Appwrite service::: getCurrentuser:: error ", error);
         }
         return null
     }
@@ -62,7 +62,7 @@ export class AuthService{
         try{
             await this.account.deleteSessions();
         }
-        catch{
+        catch(error){
             console.log("Appwrite service :: logout::error",error);
         }
     }

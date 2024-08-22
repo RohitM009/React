@@ -9,34 +9,34 @@ export class Service{
 
     constructor(){
         this.client
-            .setEndpoint(conf.appwrite)
-            .setProject(conf.appwrite);
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectId);
         this.databases=new Databases(this.client)
         this.bucket=new Storage(this.client);
     }
 
-    async createPost({title,slug,content,featuredImage,status,userId}){
+    async createPost({title,content,featuredimage,status,userid,slug}){
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                slug,//it is an document id 
+                slug,
                 {
                     title,
                     content,
-                    featuredImage,
+                    featuredimage,
                     status,
-                    userId,
+                    userid,
                 }
 
             )
         }
         catch (error) {
-            console.log("Appwrite service :: createPost :: error",error);
+            console.log("Appwrite service :: createPost() :: error",error);
         }
     }
 
-    async updatePost (slug,{title,content,featuredImage,status}){
+    async updatePost (slug,{title,content,featuredimage,status}){
         try {
             return await this.databases.updateDocument(
                 conf.appwriteDatabaseId,
@@ -45,7 +45,7 @@ export class Service{
                 {
                     title,
                     content,
-                    featuredImage,
+                    featuredimage,
                     status,
                 }
             )   
@@ -117,6 +117,7 @@ export class Service{
                 conf.appwriteBucketId,
                 fileId
             )
+            return true
         } catch (error) {
             console.log("Appwrite :: deletefile:: error",error);
             return false

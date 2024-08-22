@@ -4,9 +4,16 @@ import App from "./App.jsx";
 import "./index.css";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
-import { createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import Home from "./pages/Home.jsx";
 import { AuthLayout, Login } from "./components/index.js";
-import SignUp from "./components/SignUp.jsx";
+
+import AddPost from "./pages/Addpost.jsx";
+import Signup from "./pages/Signup.jsx";
+import EditPost from "./pages/EditPost.jsx";
+import Post from "./pages/Post.jsx";
+import AllPost from "./pages/AllPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +25,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "./login",
+        path: "/login",
         element: (
           <AuthLayout authentication={false}>
             <Login />
@@ -29,7 +36,7 @@ const router = createBrowserRouter([
         path: "/signup",
         element: (
           <AuthLayout authentication={false}>
-            <SignUp />
+            <Signup />
           </AuthLayout>
         ),
       },
@@ -38,7 +45,7 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication>
             {" "}
-            <AllPosts />
+            <AllPost />
           </AuthLayout>
         ),
       },
@@ -47,7 +54,7 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication>
             {" "}
-            <Addpost />
+            <AddPost />
           </AuthLayout>
         ),
       },
@@ -61,8 +68,8 @@ const router = createBrowserRouter([
         ),
       },
       {
-        post: "./post/:slug",
-        element: <Post />,
+        post: "/post/:slug",
+        element: <Post/>,
       },
     ],
   },

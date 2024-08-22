@@ -6,7 +6,7 @@ import { Button, Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 
-function SignUp() {
+function Signup() {
   const dispatch = useDispatch;
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -43,19 +43,18 @@ function SignUp() {
           Already have an Account?&nbsp;
           <Link
             to="/login"
-            className="font-medium tedxt-primary transition-all duration-200 hover:underline"
+            className="font-medium text-primary transition-all duration-200 hover:underline"
           >
             Sign In
           </Link>
         </p>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-        <form onSubmit={handleSubmit(create)}>
+        <form onSubmit={handleSubmit(create)} className="mt-8">
           <div className="space-y-5">
             <Input
-              label="FUll Name:"
-              placeholder="Enter Your Name"
-              type="text"
+              label="Full Name:"
+              placeholder="Enter Your Full Name"
               {...register("name", {
                 required: true,
               })}
@@ -66,9 +65,11 @@ function SignUp() {
               type="email"
               {...register("email", {
                 required: true,
-                validate: (value) =>
+                validate: {
+                  macthPatern : (value) =>
                   /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                   "Email address must be a valid address",
+                }
               })}
             />
             <Input
@@ -89,4 +90,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default Signup;
